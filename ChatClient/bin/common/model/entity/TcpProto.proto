@@ -1,0 +1,63 @@
+message Person{
+	required int32 id = 1;
+	required string nickname = 2;
+	required string password = 3;
+	required string sex = 4;
+	required int32 head = 5;
+}
+
+message RegistReq{  
+	required string nickname = 1;
+	required string password = 2;
+	required string sex = 3;
+	required int32 head = 4;
+}
+
+message RegistRes{  
+	required int32 code = 1;
+	required int32 id = 2;
+}
+
+message LoginReq{  
+	required int32 id = 1;
+	required string password = 2;
+}
+
+message LoginRes{  
+	required int32 code = 1;
+	repeated Person person = 2;
+}
+
+message LogoutReq{  
+	required int32 id = 1;
+}
+
+message LogoutRes{  
+	required int32 code = 1;
+	required Person person = 2;
+}
+
+message ShakeMsg{
+	required int32 src = 1;
+	required int32 dst = 2;
+	required string data = 3;
+}
+
+message TextMsgPrivate{  
+	required int32 src = 1;
+	required int32 dst = 2;
+	required string data = 3;
+}
+
+message TextMsgGroup{
+	required int32 src = 1;  
+	required string data = 2;
+}
+
+message TcpHeartBeatReq{  
+	required int32 data = 1;
+}
+
+message TcpHeartBeatRes{  
+	required int32 data = 1;
+}
